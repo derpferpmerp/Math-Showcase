@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cole's Math</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showProcessingMessages: false,
+            messageStyle: "none",
+            tex2jax: { inlineMath: [["$","$"],["\\(","\\)"], ["\\[", "\\]"]] },
+            "HTML-CSS": {
+                linebreaks: { automatic: true, width: "container" }
+            }
+        });
+
+
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+    <header>
+        <h1>Cole's Showcase of Mathematical Endeavours</h1>
+    </header>
+<main>
+    <!-- https://css-tricks.com/the-cleanest-trick-for-autogrowing-textareas/ -->
+    <div id="output" class="main-element" onclick="window.location.replace('fractional_cotangent.html')" onmouseover="this.style.cursor='pointer'">
+        \[ \operatorname{I}=\int_0^{\pi/2}\frac{\left\{\cot x \right\}}{\cot x}\mathrm{dx} \]
+    </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cole's Math</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showProcessingMessages: false,
+            messageStyle: "none",
+            tex2jax: { inlineMath: [["$","$"],["\\(","\\)"], ["\\[", "\\]"]] },
+            "HTML-CSS": {
+                linebreaks: { automatic: true, width: "container" }
+            }
+        });
+
+
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+    <header>
+        <h1>Cole's Showcase of Mathematical Endeavours</h1>
+    </header>
+<main>
+    <!-- https://css-tricks.com/the-cleanest-trick-for-autogrowing-textareas/ -->
+    <div id="output" class="main-element">
+        \[ \operatorname{I}=\int_0^{\pi/2}\frac{\left\{\cot x \right\}}{\cot x}\mathrm{dx} \]
+        \[
+            \text{note}\ \left\{ \cot x\right\}=\frac{\cos x}{\sin x}-\left \lfloor \frac{\cos x}{\sin x}\right \rfloor
+            \\
+            \begin{align*}
+            \operatorname{I} &= \int_0^{\pi/2}\frac{\cot x}{\cot x} \mathrm{dx}-\int_0^{\pi/2}\frac{\left \lfloor \cot x\right \rfloor}{\cot x} \mathrm{dx} \\
+            &=\frac{\pi}{2}-\int_0^{\pi/2}\frac{\sin x}{\cos x}\left \lfloor \frac{\cos x}{\sin x} \right \rfloor \mathrm{dx}\\
+            &=\frac{\pi}{2}-\sum_{n\geq1}\int_{\operatorname{arccot} \left(n+1\right)}^{\operatorname{arccot} \left(n\right)}\left(n\tan \left(x\right)\right) \mathrm{dx} \\
+            &=\frac{\pi}{2}-\sum_{n\geq1}\left.
+            \begin{matrix}
+            \\
+            n\cdot\ln\left| \sec x \right| \\
+            \\
+            \end{matrix}
+            \right|_{x=\operatorname{arccot} \left(n+1\right)}^{x=\operatorname{arccot} \left(n\right)} \\
+            &=\frac{\pi}{2}-\sum_{n\ge1}^{ }n\ln\left|\frac{\sqrt{n^{2}+1}}{n}\right|+\sum_{k\ge1}^{ }k\ln\left|\frac{\sqrt{\left(k+1\right)^{2}+1}}{k+1}\right| \\
+            &\text{let}\ k\rightarrow k-1 \\
+            &\Rightarrow\frac{\pi}{2}-\sum_{n\ge1}n\ln\left|\frac{\sqrt{n^{2}+1}}{n}\right|+\sum_{k\ge2}\left(k-1\right)\ln\left|\frac{\sqrt{k^{2}+1}}{k}\right| \\
+            &=\frac{\pi}{2}-\sum_{n\ge1}^{ }\ln\left(\frac{\sqrt{n^{2}+1}}{n}\right) \\
+            &=\frac{\pi}{2}-\frac{1}{2}\ln\left[\prod_{n\ge1}^{ }\left(1+\frac{1}{n^{2}}\right)\right] \\
+            &=\frac{\pi}{2}-\frac{1}{2}\ln\left(\frac{1}{\pi}\sinh\pi\right) \\
+            &\Rightarrow \operatorname{I}=\frac{1}{2}\ln\left(\frac{\pi\exp\pi}{\sinh\pi}\right)
+            \end{align*}
+        \]
+    </div>
+    <br>
+    <div id="Go-Back" class="main-element" onmouseover="this.style.cursor='pointer'" onclick="window.location.replace('index.html')">
+        Go Back
+    </div>
+</main>
+<script>
+    document.getElementById("Go-Back").style.textAlign = "center";
+</script>
+
+</body>
+</html>
